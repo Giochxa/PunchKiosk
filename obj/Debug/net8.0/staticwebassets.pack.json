@@ -1,0 +1,397 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PunchKiosk.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PunchKiosk.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\js\\punch.js",
+      "PackagePath": "staticwebassets\\js\\punch.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_10_20250618111445.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_10_20250618111445.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_10_20250618111800.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_10_20250618111800.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_11_20250618111250.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_11_20250618111250.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_5_20250616131941.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_5_20250616131941.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_5_20250617092059.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_5_20250617092059.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_5_20250617121729.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_5_20250617121729.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_5_20250617141001.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_5_20250617141001.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616055933.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616055933.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616090317.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616090317.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616090921.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616090921.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616095222.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616095222.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616101544.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616101544.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616104617.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616104617.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616124526.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616124526.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250616140731.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250616140731.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_6_20250618133614.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_6_20250618133614.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250616060032.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250616060032.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250616092741.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250616092741.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250616100311.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250616100311.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250616111354.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250616111354.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250616120811.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250616120811.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250616123215.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250616123215.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250616124742.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250616124742.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250617091755.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250617091755.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_7_20250617121848.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_7_20250617121848.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_8_20250616101335.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_8_20250616101335.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_8_20250616112905.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_8_20250616112905.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_8_20250616115622.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_8_20250616115622.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\punch_images\\punch_8_20250616123934.png",
+      "PackagePath": "staticwebassets\\punch_images\\punch_8_20250616123934.png"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\sounds\\error.mp3",
+      "PackagePath": "staticwebassets\\sounds\\error.mp3"
+    },
+    {
+      "Id": "C:\\Users\\gchkhaidze\\PunchKiosk\\PunchKiosk\\wwwroot\\sounds\\success.mp3",
+      "PackagePath": "staticwebassets\\sounds\\success.mp3"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PunchKiosk.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PunchKiosk.props",
+      "PackagePath": "build\\PunchKiosk.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PunchKiosk.props",
+      "PackagePath": "buildMultiTargeting\\PunchKiosk.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PunchKiosk.props",
+      "PackagePath": "buildTransitive\\PunchKiosk.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

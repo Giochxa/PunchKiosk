@@ -1,0 +1,75 @@
+<h2>Employee Punch</h2>
+
+<label for="uniqueId">Employee ID:</label>
+<input id="uniqueId" type="text" placeholder="Enter or scan ID" />
+
+<div>
+    <video id="video" width="320" height="240" autoplay></video>
+    <button id="snap">Capture Photo</button>
+    <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+    <img id="photo" alt="Captured photo" />
+</div>
+
+<button id="punchBtn">Punch In/Out</button>
+
+<script>
+  const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const photo = document.getElementById('photo');
+  const snap = document.getElementById('snap');
+  const punchBtn = document.getElementById('punchBtn');
+  const uniqueIdInput = document.getElementById('uniqueId');
+
+  // Start camera stream
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+      video.srcObject = stream;
+    })
+    .catch(err => {
+      alert("Camera access denied or unavailable: " + err);
+    });
+
+  let imageBase64 = "";
+
+  snap.addEventListener('click', () => {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    imageBase64 = canvas.toDataURL('image/png');
+    photo.src = imageBase64;
+  });
+
+  punchBtn.addEventListener('click', () => {
+    const uniqueId = uniqueIdInput.value.trim();
+    if (!uniqueId) {
+      alert("Please enter your Employee ID.");
+      return;
+    }
+
+    if (!imageBase64) {
+      alert("Please capture your photo before punching.");
+      return;
+    }
+
+    const punchData = {
+      uniqueId: uniqueId,
+      imageBase64: imageBase64,
+      punchTime: new Date().toISOString()
+    };
+
+    fetch('/punch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(punchData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message || "Punch successful!");
+        uniqueIdInput.value = "";
+        photo.src = "";
+        imageBase64 = "";
+      })
+      .catch(err => {
+        alert("Error during punch: " + err);
+      });
+  });
+</script>
