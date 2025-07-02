@@ -12,5 +12,5 @@ RUN dotnet publish -c Release -o /app/out
 # Final image
 FROM base AS final
 WORKDIR /app
-COPY --from=build /app/out .
+COPY --from=build /out .
 ENTRYPOINT ["dotnet", "PunchKiosk.dll"]
