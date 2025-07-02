@@ -7,7 +7,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet publish "PunchKiosk/PunchKiosk.csproj" -c Release -o /app/out
+RUN dotnet publish "punchkiosk/PunchKiosk.csproj" -c Release -o /app/out
 
 # Final image
 FROM base AS final
