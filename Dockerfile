@@ -6,7 +6,7 @@ EXPOSE 80
 # Build image
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY PunchKiosk/ ./PunchKiosk/
+COPY PunchKiosk/ ./
 WORKDIR /src/PunchKiosk
 RUN dotnet publish PunchKiosk.csproj -c Release -o /app/out
 
