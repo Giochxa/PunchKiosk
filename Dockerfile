@@ -1,4 +1,4 @@
-# Use ASP.NET Core runtime image
+# Base image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 80
@@ -6,8 +6,9 @@ EXPOSE 80
 # Build image
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY . .
-RUN dotnet publish "punchkiosk/PunchKiosk.csproj" -c Release -o /app/out
+COPY PunchKiosk/ ./PunchKiosk/
+WORKDIR /src/PunchKiosk
+RUN dotnet publish PunchKiosk.csproj -c Release -o /app/out
 
 # Final image
 FROM base AS final
