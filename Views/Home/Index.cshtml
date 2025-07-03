@@ -142,22 +142,6 @@
         }
     }
 
-#fullscreenBtn {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1vh;
-}
-
-.dark-mode #fullscreenBtn {
-    background-color: #444;
-    color: #eee;
-}
-
 </style>
 
 <main>
@@ -187,20 +171,10 @@
     </div>
 
     <button id="submitPunch" disabled>Submit Punch</button>
-<button id="fullscreenBtn">⛶ Fullscreen</button>
+
 </main>
 
 <script src="/js/punch.js">
-document.getElementById("fullscreenBtn").addEventListener("click", () => {
-    const el = document.documentElement;
-    if (el.requestFullscreen) {
-        el.requestFullscreen();
-    } else if (el.webkitRequestFullscreen) {
-        el.webkitRequestFullscreen();
-    } else if (el.msRequestFullscreen) {
-        el.msRequestFullscreen();
-    }
-});
 
 </script>
 
@@ -235,15 +209,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.getElementById("fullscreenBtn").addEventListener("click", () => {
-    const el = document.documentElement;
-    if (el.requestFullscreen) {
-        el.requestFullscreen();
-    } else if (el.webkitRequestFullscreen) {
-        el.webkitRequestFullscreen();
-    } else if (el.msRequestFullscreen) {
-        el.msRequestFullscreen();
-    }
-});
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log("Service Worker registered"))
+        .catch(err => console.error("Service Worker error", err));
+}
 
 </script>
