@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateDateTime, 1000);
     updateDateTime();
 
-    // Start camera with 5s timeout fallback
+    // Start camera with 1.5s timeout fallback
     async function startCamera() {
         try {
             videoStream = await navigator.mediaDevices.getUserMedia({
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             video.play();
 
             const timeout = new Promise((resolve) => {
-                setTimeout(() => resolve(false), 5000);
+                setTimeout(() => resolve(false), 1500);
             });
 
             const ready = new Promise((resolve) => {
@@ -135,11 +135,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const photoData = await capturePhoto();
 
         try {
-            const response = await fetch('/api/punch', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ employeeId, punchTime, photoData })
-            });
+            const payload = {
+    employeeId,
+    punchTime
+};
+
+if (photoData) {
+    payload.photoData = photoData;
+}
+
+const response = await fetch('/api/punch', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+});
+
 
             if (!response.ok) {
                 const error = await response.text();
