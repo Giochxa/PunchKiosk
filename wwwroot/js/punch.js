@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function startPunchApp() {
     const video = document.getElementById('video');
     const snapshot = document.getElementById('snapshot');
     const messageDiv = document.getElementById('message');
@@ -45,13 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
         startClock();
     }
 
+    function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
 
-//fullscreen logic goes here
+    function startCamera() {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            messageDiv.textContent = 'Camera not supported in this browser.';
+            messageDiv.style.color = 'red';
+            return;
+        }
 
-
-
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: false })
             .then(stream => {
                 video.srcObject = stream;
                 video.play();
@@ -60,9 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.textContent = 'Camera access denied: ' + err.message;
                 messageDiv.style.color = 'red';
             });
+    }
+
+    // Trigger camera only after user interaction on iOS
+    if (isIOS()) {
+        const tapToStart = () => {
+            startCamera();
+            document.removeEventListener('touchstart', tapToStart);
+        };
+        document.addEventListener('touchstart', tapToStart, { once: true });
     } else {
-        messageDiv.textContent = 'Camera not supported in this browser.';
-        messageDiv.style.color = 'red';
+        startCamera();
     }
 
     startClock();
@@ -156,4 +169,4 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(resetUI, 2000);
         }
     });
-});
+}
