@@ -2,26 +2,30 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add configuration
+// Configuration
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
-// Add services
+// Services
 builder.Services.AddControllersWithViews();
-
-// Register DB context
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Register SyncService and HttpClient
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<SyncService>();
-
-// Register IConfiguration if needed in other services manually
+builder.Services.AddTransient<DataSeeder>();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 var app = builder.Build();
 
-// Background sync task
+// 🟢 Apply migrations and seed database
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+    var seeder = scope.ServiceProvider.GetRequiredService<DataSeeder>();
+    await seeder.SeedAsync();
+}
+
+// 🔁 Background Sync Task
 app.Lifetime.ApplicationStarted.Register(() =>
 {
     Task.Run(async () =>
@@ -35,8 +39,6 @@ app.Lifetime.ApplicationStarted.Register(() =>
             try
             {
                 await syncService.PushPunchesAsync();
-
-                // Sync employees every 10 minutes
                 if (minuteCounter % 10 == 0)
                 {
                     await syncService.SyncEmployeesAsync();
@@ -53,9 +55,12 @@ app.Lifetime.ApplicationStarted.Register(() =>
     });
 });
 
-
-// Middleware
-if (!app.Environment.IsDevelopment())
+// 🔧 Middleware
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
@@ -66,7 +71,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-// Default route
+// Routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Intro}/{id?}");
