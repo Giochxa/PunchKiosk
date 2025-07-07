@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        background: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tap-to-start {
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        padding: clamp(1rem, 4vh, 3rem);
+        border: 2px solid white;
+        border-radius: 15px;
+        cursor: pointer;
+        max-width: 90vw;
+        width: 100%;
+        box-sizing: border-box;
+        line-height: 1.4;
+    }
+
+    .tap-to-start:active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+</style>
+
+<div class="tap-to-start" onclick="startApp()">
+    🚀 Tap to Start
+</div>
+
+<script>
+    function startApp() {
+        window.location.href = "/Home/Index";
+    }
+</script>
