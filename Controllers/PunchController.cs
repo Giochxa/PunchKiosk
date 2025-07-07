@@ -38,9 +38,9 @@ public class PunchController : ControllerBase
         if (string.IsNullOrWhiteSpace(request.UniqueId))
             return BadRequest(new { error = "UniqueId is required" });
 
-        if (string.IsNullOrWhiteSpace(request.ImageBase64))
-            return BadRequest(new { error = "ImageBase64 is required" });
-
+        if (string.IsNullOrWhiteSpace(request.ImageBase64)){
+            //return BadRequest(new { error = "ImageBase64 is required" });
+}
         var employee = await _context.Employees
             .FirstOrDefaultAsync(e => e.UniqueId == request.UniqueId && e.IsActive);
 
