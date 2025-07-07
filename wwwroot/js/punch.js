@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let enteredValue = '';
     let videoStream = null;
+    let cameraAvailable = false;
 
     function toggleSubmitButton() {
         submitBtn.disabled = enteredValue.trim().length === 0;
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateDateTime, 1000);
     updateDateTime();
 
-    // Start camera after page load
+    // Start camera with 5s timeout fallback
     async function startCamera() {
         try {
             videoStream = await navigator.mediaDevices.getUserMedia({
@@ -32,8 +33,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 audio: false
             });
             video.srcObject = videoStream;
-            await video.play();
+            video.play();
+
+            const timeout = new Promise((resolve) => {
+                setTimeout(() => resolve(false), 5000);
+            });
+
+            const ready = new Promise((resolve) => {
+                const checkReady = () => {
+                    if (video.videoWidth > 0) resolve(true);
+                    else requestAnimationFrame(checkReady);
+                };
+                checkReady();
+            });
+
+            cameraAvailable = await Promise.race([ready, timeout]);
+
+            if (!cameraAvailable) {
+                messageDiv.textContent = "⚠️ Camera preview not available. Punch will proceed without photo.";
+                messageDiv.style.color = "orange";
+            }
+
         } catch (err) {
+            cameraAvailable = false;
             messageDiv.textContent = 'Camera error: ' + err.message;
             messageDiv.style.color = 'red';
         }
@@ -80,6 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function capturePhoto() {
         return new Promise((resolve) => {
+            if (!cameraAvailable) {
+                return resolve(""); // empty image if no camera
+            }
+
             const waitForFrame = () => {
                 if (video.videoWidth === 0 || video.videoHeight === 0) {
                     requestAnimationFrame(waitForFrame);
@@ -106,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const punchTimeObj = new Date();
         const punchTime = punchTimeObj.toISOString();
-
         const photoData = await capturePhoto();
 
         try {
@@ -127,12 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
 
-            // Show snapshot
-            snapshot.src = photoData;
-            snapshot.style.display = 'block';
-            document.getElementById("snapshotContainer").style.display = "block";
-            document.getElementById("videoContainer").style.display = "none";
-            video.style.display = "none";
+            if (cameraAvailable) {
+                snapshot.src = photoData;
+                snapshot.style.display = 'block';
+                document.getElementById("snapshotContainer").style.display = "block";
+                document.getElementById("videoContainer").style.display = "none";
+                video.style.display = "none";
+            }
 
             messageDiv.innerHTML =
                 `<span style="color:green; font-weight:bold;">Punch successful! Employee: ${result.employeeInitials}</span>`;
