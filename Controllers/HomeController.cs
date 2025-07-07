@@ -59,6 +59,10 @@ public async Task<IActionResult> SubmitPunch(string uniqueId)
     {
         return View();
     }
+    public IActionResult Intro()
+    {
+        return View(); // Loads Views/Punch/Intro.cshtml
+    }
 
     private string GetInitials(string fullName)
     {
