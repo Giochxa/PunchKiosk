@@ -179,40 +179,43 @@
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const submitBtn = document.getElementById("submitPunch");
-    const video = document.getElementById("video");
-    const canvas = document.getElementById("snapshot");
+  const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const photo = document.getElementById('photo');
+  const snap = document.getElementById('snap');
+  const punchBtn = document.getElementById('punchBtn');
+  const uniqueIdInput = document.getElementById('uniqueId');
 
-    submitBtn.addEventListener("click", async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }, audio: false });
-            video.srcObject = stream;
-            video.style.display = "block";
+  const isIPhone = /iPhone|iPad|iPod|iOS|Android/i.test(navigator.userAgent);
 
-            // Allow camera to warm up
-            setTimeout(() => {
-                const context = canvas.getContext("2d");
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  function startCamera() {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        alert("Camera access denied or unavailable");
+      });
+  }
 
-                // Optional: Stop camera after snapshot
-                stream.getTracks().forEach(track => track.stop());
+  if (!isIPhone) {
+    // Automatically start camera on desktop
+    startCamera();
+  } else {
+    // On phones, require user gesture
+    const enableBtn = document.createElement("button");
+    enableBtn.textContent = "Enable Camera";
+    enableBtn.style.margin = "10px";
+    enableBtn.onclick = () => {
+      startCamera();
+      enableBtn.remove(); // remove button after enabling
+    };
+    document.body.insertBefore(enableBtn, video);
+  }
 
-                video.style.display = "none";
-                canvas.style.display = "block";
-            }, 1000);
-        } catch (err) {
-            alert("Camera error: " + err.message);
-        }
-    });
-});
-
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-        .then(() => console.log("Service Worker registered"))
-        .catch(err => console.error("Service Worker error", err));
-}
-
+  snap.addEventListener('click', () => {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    photo.src = canvas.toDataURL('image/png');
+  });
 </script>
