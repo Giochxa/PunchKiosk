@@ -1,10 +1,10 @@
 {
   "name": "Punch Kiosk",
-  "short_name": "Kiosk",
+  "short_name": "Punch Kiosk",
   "start_url": "/",
   "display": "fullscreen",
-  "background_color": "#ffffff",
-  "theme_color": "#007bff",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "orientation": "portrait",
   "icons": [
     {
