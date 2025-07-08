@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
-    <title>@ViewData["Title"] - PunchKiosk</title>
+    <title>@ViewData["Title"] - Punch Kiosk</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PunchKiosk.styles.css" asp-append-version="true" />
@@ -77,27 +77,42 @@
         .footer a {
             text-decoration: none;
         }
+
+        #darkModeButton {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        z-index: 999;
+}
+
+
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-0">
-            <div class="container-fluid">
-                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Intro">
-                    <img src="~/images/logo.png" alt="Logo" style="height:30px; margin-right:10px;" /> PunchKiosk
-                </a>
-                 @* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> *@
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
-                    <div class="form-check form-switch text-dark">
-                        <input class="form-check-input" type="checkbox" id="darkModeToggle">
-                        <label class="form-check-label" for="darkModeToggle">🌓</label>
-                    </div>
-                </div>
-            </div>
-        </nav>
+       <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-0 position-relative">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Intro">
+            <img src="~/images/logo.png" alt="Logo" style="height:30px; margin-right:10px;" /> PunchKiosk
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+            <!-- Nothing here anymore if you want it fixed on corner -->
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle Fixed in Top Right -->
+    <div id="darkModeButton">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="darkModeToggle">
+            <label class="form-check-label" for="darkModeToggle">🌓</label>
+        </div>
+    </div>
+</nav>
+
     </header>
 
     <main role="main">
