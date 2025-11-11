@@ -14,13 +14,11 @@ public class HomeController : Controller
     }
 
    [HttpPost]
+[HttpPost]
 public async Task<IActionResult> SubmitPunch(string uniqueId)
 {
     if (string.IsNullOrWhiteSpace(uniqueId))
-    {
-        ViewBag.Result = "Please enter an employee ID.";
-        return View("Index");
-    }
+        return BadRequest("Please enter an employee ID.");
 
     try
     {
@@ -28,33 +26,27 @@ public async Task<IActionResult> SubmitPunch(string uniqueId)
             .FirstOrDefaultAsync(e => e.UniqueId == uniqueId && e.IsActive);
 
         if (employee == null)
-        {
-            ViewBag.Result = "Employee not found or inactive.";
-            return View("Index");
-        }
+            return BadRequest("Employee not found or inactive.");
 
-        // ✅ Store PersonalId for sync
         var punch = new PunchRecord
-{
-    EmployeeId = employee.Id,
-    PersonalId = employee.PersonalId,   // ✅ store PersonalId for syncing
-    PunchTime = DateTime.UtcNow,
-    IsSynced = false,
-    Employee = employee
-};
+        {
+            EmployeeId = employee.Id,
+            PersonalId = employee.PersonalId,
+            PunchTime = DateTime.UtcNow,
+            IsSynced = false
+        };
 
         _context.PunchRecords.Add(punch);
         await _context.SaveChangesAsync();
 
-        ViewBag.Result = $"Punch saved for {GetInitials(employee.FullName)} at {punch.PunchTime.ToLocalTime():g}";
+        return Ok($"✅ Punch saved for {GetInitials(employee.FullName)} at {punch.PunchTime.ToLocalTime():g}");
     }
     catch (Exception ex)
     {
-        ViewBag.Result = $"Error: {ex.Message}";
+        return BadRequest($"Error: {ex.Message}");
     }
-
-    return View("Index");
 }
+
 
   
     public IActionResult Index()
