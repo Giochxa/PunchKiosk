@@ -33,12 +33,15 @@ public async Task<IActionResult> SubmitPunch(string uniqueId)
             return View("Index");
         }
 
+        // ✅ Store PersonalId for sync
         var punch = new PunchRecord
-        {
-            EmployeeId = employee.Id,
-            PunchTime = DateTime.UtcNow,
-            IsSynced = false
-        };
+{
+    EmployeeId = employee.Id,
+    PersonalId = employee.PersonalId,   // ✅ store PersonalId for syncing
+    PunchTime = DateTime.UtcNow,
+    IsSynced = false,
+    Employee = employee
+};
 
         _context.PunchRecords.Add(punch);
         await _context.SaveChangesAsync();
@@ -47,7 +50,6 @@ public async Task<IActionResult> SubmitPunch(string uniqueId)
     }
     catch (Exception ex)
     {
-        // Optionally log ex.Message here if you have logging
         ViewBag.Result = $"Error: {ex.Message}";
     }
 
@@ -59,10 +61,11 @@ public async Task<IActionResult> SubmitPunch(string uniqueId)
     {
         return View();
     }
-    public IActionResult Intro()
+   public IActionResult Intro()
     {
         return View(); // Loads Views/Punch/Intro.cshtml
     }
+
 
     private string GetInitials(string fullName)
     {
