@@ -127,11 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     submitBtn.addEventListener('click', async () => {
-    const employeeId = enteredValue.trim();
-    if (!employeeId) return;
+    const uniqueId = enteredValue.trim();
+    if (!uniqueId) return;
 
     try {
-        const payload = new URLSearchParams({ uniqueId: employeeId });
+        const payload = new URLSearchParams({ uniqueId });
 
         const response = await fetch('/Home/SubmitPunch', {
             method: 'POST',
@@ -141,22 +141,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!response.ok) {
             const error = await response.text();
-            messageDiv.textContent = 'Error: ' + error;
+            messageDiv.textContent = '⚠️ ' + error;
             messageDiv.style.color = 'red';
             errorSound.play();
             setTimeout(resetUI, 2000);
             return;
         }
 
-        const html = await response.text(); // MVC returns HTML view
-        document.open();
-        document.write(html);
-        document.close();
+        // ✅ Expect plain text response (not full HTML)
+        const result = await response.text();
+        messageDiv.textContent = result;
+        messageDiv.style.color = 'green';
+        successSound.play();
+
+        numInput.style.display = 'none';
+        numpadDiv.style.display = 'none';
+        submitBtn.style.display = 'none';
+
+        setTimeout(resetUI, 2000);
     } catch (err) {
-        errorSound.play();
         messageDiv.textContent = 'Network or server error: ' + err.message;
         messageDiv.style.color = 'red';
+        errorSound.play();
         setTimeout(resetUI, 2000);
     }
 });
+
 });
