@@ -84,12 +84,14 @@ public class SyncService
 
             var base64Image = Convert.ToBase64String(await File.ReadAllBytesAsync(fullImagePath));
 
-            var payload = new PunchRequest
-            {
-                UniqueId = punch.Employee?.UniqueId,
-                PunchTime = punch.PunchTime,
-                ImageBase64 = base64Image
-            };
+            var payload = new PunchSyncRequest
+{
+    PersonalId = punch.PersonalId ?? punch.Employee?.PersonalId,
+    PunchTime = punch.PunchTime,
+    ImageBase64 = base64Image
+};
+
+            //Console.WriteLine($"➡️  Sync payload: {System.Text.Json.JsonSerializer.Serialize(payload)}");
 
             var response = await _http.PostAsJsonAsync($"{_serverUrl}/api/punches", payload);
                 if (response.IsSuccessStatusCode)
