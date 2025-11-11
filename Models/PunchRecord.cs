@@ -7,7 +7,8 @@ public class PunchRecord
 
     // public bool IsPunchIn { get; set; }
     public bool IsSynced { get; set; } = false;
-
+    // ✅ New field to keep PersonalId for sync reference
+    public string? PersonalId { get; set; }
     public Employee Employee { get; set; }
     public DateTime? SyncedAt { get; set; }
 
