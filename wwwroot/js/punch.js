@@ -127,63 +127,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     submitBtn.addEventListener('click', async () => {
-        const employeeId = enteredValue.trim();
-        if (!employeeId) return;
+    const employeeId = enteredValue.trim();
+    if (!employeeId) return;
 
-        const punchTimeObj = new Date();
-        const punchTime = punchTimeObj.toISOString();
-        const photoData = await capturePhoto();
+    try {
+        const payload = new URLSearchParams({ uniqueId: employeeId });
 
-        try {
-            const payload = {
-    employeeId,
-    punchTime
-};
+        const response = await fetch('/Home/SubmitPunch', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: payload
+        });
 
-if (photoData) {
-    payload.photoData = photoData;
-}
-
-const response = await fetch('/api/punch', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-});
-
-
-            if (!response.ok) {
-                const error = await response.text();
-                messageDiv.textContent = 'Error: ' + error;
-                messageDiv.style.color = 'red';
-                errorSound.play();
-                setTimeout(resetUI, 2000);
-                return;
-            }
-
-            const result = await response.json();
-
-            if (cameraAvailable) {
-                snapshot.src = photoData;
-                snapshot.style.display = 'block';
-                document.getElementById("snapshotContainer").style.display = "block";
-                document.getElementById("videoContainer").style.display = "none";
-                video.style.display = "none";
-            }
-
-            messageDiv.innerHTML =
-                `<span style="color:green; font-weight:bold;">Punch successful! Employee: ${result.employeeInitials}</span>`;
-
-            numInput.style.display = 'none';
-            numpadDiv.style.display = 'none';
-            submitBtn.style.display = 'none';
-
-            successSound.play();
-            setTimeout(resetUI, 2000);
-        } catch (err) {
-            errorSound.play();
-            messageDiv.textContent = 'Network or server error: ' + err.message;
+        if (!response.ok) {
+            const error = await response.text();
+            messageDiv.textContent = 'Error: ' + error;
             messageDiv.style.color = 'red';
+            errorSound.play();
             setTimeout(resetUI, 2000);
+            return;
         }
-    });
+
+        const html = await response.text(); // MVC returns HTML view
+        document.open();
+        document.write(html);
+        document.close();
+    } catch (err) {
+        errorSound.play();
+        messageDiv.textContent = 'Network or server error: ' + err.message;
+        messageDiv.style.color = 'red';
+        setTimeout(resetUI, 2000);
+    }
+});
 });
