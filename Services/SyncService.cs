@@ -69,40 +69,70 @@ public class SyncService
             .Where(p => !p.IsSynced)
             .ToListAsync();
 
-        if (!unsynced.Any()) return;
+        if (!unsynced.Any())
+        {
+            Console.WriteLine("[PushPunchesAsync] No unsynced punches found.");
+            return;
+        }
 
         foreach (var punch in unsynced)
         {
-            var imageFileName = Path.GetFileName(punch.ImagePath);
-            var fullImagePath = Path.Combine("wwwroot", "punch_images", imageFileName);
+            // ✅ Null-safe file handling
+            var imageFileName = Path.GetFileName(punch.ImagePath ?? string.Empty);
+            string base64Image = string.Empty;
 
-            if (!File.Exists(fullImagePath))
+            if (!string.IsNullOrEmpty(imageFileName))
             {
-                Console.WriteLine($"[PushPunchesAsync] Image file missing: {fullImagePath}");
-                continue; // or punch.IsSynced = true; to skip
+                var fullImagePath = Path.Combine("wwwroot", "punch_images", imageFileName);
+
+                if (File.Exists(fullImagePath))
+                {
+                    try
+                    {
+                        base64Image = Convert.ToBase64String(await File.ReadAllBytesAsync(fullImagePath));
+                    }
+                    catch (Exception ioEx)
+                    {
+                        Console.WriteLine($"[PushPunchesAsync] Error reading image file: {ioEx.Message}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"[PushPunchesAsync] ⚠️ Image file missing: {fullImagePath}");
+                }
             }
 
-            var base64Image = Convert.ToBase64String(await File.ReadAllBytesAsync(fullImagePath));
-
+            // ✅ Build payload using correct server-side JSON property names
             var payload = new PunchSyncRequest
-{
-    PersonalId = punch.PersonalId ?? punch.Employee?.PersonalId,
-    PunchTime = punch.PunchTime,
-    ImageBase64 = base64Image
-};
+            {
+                PersonalId = punch.PersonalId ?? punch.Employee?.PersonalId,
+                PunchTime = punch.PunchTime.ToUniversalTime(),  // send UTC time
+                ImageBase64 = base64Image
+            };
 
-            //Console.WriteLine($"➡️  Sync payload: {System.Text.Json.JsonSerializer.Serialize(payload)}");
+            // ✅ Log outgoing payload
+            Console.WriteLine($"➡️ Sync payload: {System.Text.Json.JsonSerializer.Serialize(payload)}");
 
-            var response = await _http.PostAsJsonAsync($"{_serverUrl}/api/punches", payload);
+            try
+            {
+                var response = await _http.PostAsJsonAsync($"{_serverUrl}/api/punches", payload);
+
                 if (response.IsSuccessStatusCode)
                 {
                     punch.IsSynced = true;
                     punch.SyncedAt = DateTime.UtcNow;
+                    Console.WriteLine($"✅ Synced punch for PersonalId: {payload.PersonalId}");
                 }
                 else
                 {
-                    Console.WriteLine($"[PushPunchesAsync] Server error: {response.StatusCode}");
+                    var errorBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"❌ [PushPunchesAsync] Server error: {response.StatusCode} → {errorBody}");
                 }
+            }
+            catch (Exception httpEx)
+            {
+                Console.WriteLine($"[PushPunchesAsync] HTTP error: {httpEx.Message}");
+            }
         }
 
         await _context.SaveChangesAsync();
@@ -110,8 +140,11 @@ public class SyncService
     catch (Exception ex)
     {
         Console.WriteLine($"[PushPunchesAsync] Error: {ex.Message}");
+        if (ex.InnerException != null)
+            Console.WriteLine($"[PushPunchesAsync] Inner: {ex.InnerException.Message}");
     }
 }
+
 
     public async Task SubmitPunchAsync(int employeeId)
     {
